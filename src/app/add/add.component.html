@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="image">
+<mat-card class="example-card image2">
+    <div *ngIf="error" class="m-b-10">
+        <mat-label>{{errorstatement}}</mat-label>
+      </div>
+      <div *ngIf="!error" class="m-b-10">
+          <mat-label>{{errorstatement}}</mat-label>
+  <form [formGroup]="formgroup">
+      <div class="example-container">
+    <mat-form-field>
+        <input matInput type="input" formControlName="firstname" placeholder="First Name" required> 
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" formControlName="lastname" placeholder="Last Name" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Branch" id="branch" formControlName="branch">
+          <mat-option *ngFor="let branch of branchs" [value]="branch">{{branch}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" formControlName="physics" placeholder="Physics" required> 
+        
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" formControlName="english" placeholder="English" required> 
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" formControlName="maths" placeholder="Maths" required> 
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" formControlName="chemistry" placeholder="Chemistry" required> 
+      </mat-form-field>
+      <div  class="button" style="margin-bottom: 10px">
+          <button mat-stroked-button color="secondary" (click)="submit()" class="button">Submit</button>
+          </div>
+      </div>
+    </form>
+    </div>
+    </mat-card>
+    </div>

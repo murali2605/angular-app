@@ -1,0 +1,89 @@
+<div fxLayout="column" class="main-screen">
+  <app-header></app-header>
+  <div class="searchfield-responsive" fxLayoutAlign="end center">
+    <mat-form-field>
+      <input matInput (keyup)="searchFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+  </div>
+  <div style="width:100%">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <ng-container matColumnDef="rollno">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="6.0">
+          Roll No </th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.rollno}} </td>
+      </ng-container>
+      <ng-container matColumnDef="firstname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="9">
+          First Name</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.firstname}} </td>
+      </ng-container>
+      <ng-container matColumnDef="lastname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="8">Last
+          Name</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.lastname}} </td>
+      </ng-container>
+      <ng-container matColumnDef="branch">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="6.7">
+          Branch</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.branch}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Physics">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="8">
+          Physics</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.Physics}} </td>
+      </ng-container>
+      <ng-container matColumnDef="English">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="8">English</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.English}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Maths">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="7.5">
+          Maths</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.Maths}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Chemistry">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="8.7">
+          Chemistry</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.Chemistry}} </td>
+      </ng-container>
+      <ng-container matColumnDef="percentage">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="9.2">
+          Percentage</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.percentage +"%"}} </td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header fxLayoutAlign="end center" class="w--100" fxFlex="6.7">
+          Status</th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          {{element.status}} </td>
+      </ng-container>
+      <ng-container matColumnDef="blank1">
+        <th mat-header-cell *matHeaderCellDef fxLayoutAlign="end center" class="w--100" fxFlex="20.4"></th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          <button mat-icon-button (click)=onEdit(element.rollno)>
+            <mat-icon>edit</mat-icon></button>
+      </ng-container>
+      <ng-container matColumnDef="blank2">
+        <th mat-header-cell *matHeaderCellDef fxLayoutAlign="end center" class="w--100" fxFlex="20.4"></th>
+        <td mat-cell *matCellDef="let element" class="row-labels w--100" fxLayoutAlign="start center" fxFlex="10">
+          <button mat-icon-button (click)= opendeletepopup(element.rollno)>
+            <mat-icon>delete
+            </mat-icon>
+            </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<mat-toolbar class="toolbar" >
+  <button  mat-flat-button class="button">
+  <mat-icon  (click)="onHome()">home</mat-icon></button>
+  <div fxLayout="row" fxLayoutAlign="end right">Students Information</div>
+
+  <div fxLayout="row" fxLayoutAlign="end end" style="margin-left: 65%;">
+    
+        <button mat-flat-button class="button" (click)="addDialog()">
+          <i class="material-icons">
+            add
+            </i>ADD
+         </button>
+      <button mat-flat-button class="button" (click)="onDashboard()">
+        <i class="material-icons">
+          dashboard
+          </i>
+        Dashboard
+      </button>
+    </div>
+
+  
+
+</mat-toolbar>

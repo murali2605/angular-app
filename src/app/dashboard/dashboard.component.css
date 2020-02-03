@@ -1,0 +1,15 @@
+
+  .chart{
+    margin-top: 5%;
+      width: 48%;
+      margin-right: 4%;
+  }
+.chart2{
+    width: 48%;
+    margin-right: 2%;
+    height: 444px;
+}
+.h4{
+  margin-block-start: 0.01em;
+  margin-block-end: 0.5em;
+}

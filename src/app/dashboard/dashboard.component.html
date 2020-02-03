@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div fxLayout="row" fxLayoutAlign="end right">
+  <div class="chart">
+    <div style="display: block;width: 600px;height: 375px">
+      <canvas baseChart
+      height="70"
+                width="100"
+              [datasets]="lineChartData"
+              [labels]="mbarChartLabels"
+              [options]="barChartOptions"
+              [colors]="barChartColors"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+             ></canvas>
+    </div>
+    <div style="margin-block-start: 2.5em;">
+  <h4 class="h4">Total No of Students Passed:{{passcount}}</h4>
+  <h4 class="h4">Total No of Students Failed:{{failcount}}</h4>
+  <h4 class="h4">Total No of Students :{{totalcount}}</h4>
+  </div>
+  </div>
+  
+    <div class="chart2">
+    
+      <div fxLayoutAlign="end center">
+    <mat-form-field >
+        <input matInput type="input" [(ngModel)]="cutoff" placeholder="Cutoff Value" name="cutoffvalue" required>
+    </mat-form-field>
+
+        <span  class="button" style="margin-bottom: 10px">
+            <button mat-button (click)="submit()" class="button">Submit</button>
+            </span>
+      </div>
+     
+
+    <div style="display: block;width: 600px;height: 375px">
+      <canvas baseChart
+      height="70"
+      width="100"
+              [datasets]="BarChartData"
+              [labels]="mbarChartLabels"
+              [options]="barChartOptions"
+              [colors]="barChartColors"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+             ></canvas>
+    </div>
+    <div style="margin-block-start: 2.5em;">
+  <h4 class="h4">Total No of Students Passed:{{pcount}}</h4>
+  <h4 class="h4">Total No of Students Failed:{{fcount}}</h4>
+  <h4 class="h4">Total No of Students :{{tcount}}</h4>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<mat-card class="card">
+  <div *ngIf="error" class="m-b-10">
+    <mat-label>{{errorstatement}}</mat-label>
+  </div>
+  <div *ngIf="!error" class="m-b-10">
+    <mat-label>{{errorstatement}}</mat-label>
+  </div>
+  <form>
+    <mat-form-field>
+      <input matInput type="input" [(ngModel)]="fname" placeholder="First Name" name="firstname" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="input" [(ngModel)]="lname" placeholder="Last Name" name="lastname" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="input" [(ngModel)]="branch" placeholder="Branch" name="branch" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="input" [(ngModel)]="Physics" placeholder="Physics" name="physics" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="input" [(ngModel)]="English" placeholder="English" name="english" required>
+    </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" [(ngModel)]="Maths" placeholder="Maths" name="maths" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" [(ngModel)]="Chemistry" placeholder="Chemistry" name="chemistry" required>
+      </mat-form-field>
+    <div class="button">
+      <button mat-button (click)="submit()" class="button">Submit</button>
+    </div>
+  </form>
+</mat-card>

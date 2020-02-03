@@ -1,0 +1,16 @@
+<div>
+    <div mat-dialog-content  class="dialog">
+        <mat-toolbar>
+            <label class="m-l-6 f-15" style=" font-family: Lato;font-size: 15px ;text-align: center">Delete</label>
+        </mat-toolbar>
+        <p style="font-family:lato; color: #D61360; margin-left:22px; font-size: 16px"> Are you sure you want to delete?
+        </p>
+    </div>
+    <div mat-dialog-actions style="padding-left: 131px;padding-top: 8px;">
+    
+    <button mat-button class="deletebutton" style="background-color: #079ed5; color: white; "
+            (click)="onDelete()">Yes</button>
+        <button mat-button (click)="onNoClick()">No</button>
+        
+    </div>
+</div>
