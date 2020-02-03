@@ -17,18 +17,18 @@ export class StudentService {
    }
 
   public studentDetails(): Observable<any> {
-    return this.http.get<any>("http://139.73.40.133:3000/studentdetails/details");
+    return this.http.get<any>("http://192.168.43.30:3000/studentdetails/details");
 }
 public studentid(rollno): Observable<any> {
-  return this.http.get<any>("http://139.73.40.133:3000/studentdetails/detail/"+rollno);
+  return this.http.get<any>("http://192.168.43.30:3000/studentdetails/detail/"+rollno);
 }
 public add(request): Observable<any> {
-  return this.http.post<any>("http://139.73.40.133:3000/studentdetails/insert", request);
+  return this.http.post<any>("http://192.168.43.30:3000/studentdetails/insert", request);
 }
 public update(request): Observable<any> {
-  return this.http.post<any>("http://139.73.40.133:3000/studentdetails/update", request);
+  return this.http.post<any>("http://192.168.43.30:3000/studentdetails/update", request);
 }
 public delete(rollno): Observable<any> {
-  return this.http.get<any>("http://139.73.40.133:3000/studentdetails/delete/"+rollno);
+  return this.http.get<any>("http://192.168.43.30:3000/studentdetails/delete/"+rollno);
 }
 }
